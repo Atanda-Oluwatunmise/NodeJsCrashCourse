@@ -26,4 +26,27 @@ const readFile = async () => {
     }
 };
 
+
+//Write file
+const writeFile = async () => {
+    try {
+        await fs.writeFile('./text.txt', 'Hello i am writing to this file');
+        console.log('File written to...');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+//append file
+const appendFile = async () => {
+    try {
+        await fs.appendFile('./text.txt', '\nI am appending to this file');
+        console.log("File appended successfully");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+writeFile();
+appendFile();
 readFile();
